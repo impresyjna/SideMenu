@@ -64,7 +64,7 @@ internal final class SideMenuPresentationController {
     }
 
     deinit {
-        guard presentedViewController?.isHidden == false else { return }
+        guard let presentedViewController = presentedViewController, presentedViewController.isHidden == false else { return }
 
         // Presentations must be reversed to preserve user experience
         dismissalTransitionWillBegin()
